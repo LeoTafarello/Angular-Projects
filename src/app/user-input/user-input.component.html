@@ -1,0 +1,31 @@
+<form (ngSubmit)="onSubmit()">
+  <div class="input-group">  <!--div para ter fields em 1 linha-->
+    <div>
+        <p>
+      <label for="income">Investimento Inicial</label>
+      <input type="number" id="income" name="income" [(ngModel)]="enteredInitialInvestment"/>  <!-- Two-way binding -->
+      </p>
+    </div>
+    <div>
+        <p>
+      <label for="anual_investiment">Investimento Anual</label>
+      <input type="number" id="anual_investiment" name="anual_investiment" [(ngModel)]="enteredAnualInvestment"/>
+      </p>
+    </div>
+  </div>
+    <div class="input-group"> <!--div 2 para ter fields em 1 outra linha -->
+    <div>
+        <p> <!--para dar espaçamento entre label e input -->
+      <label for="expected_return">Retorno Esperado</label>
+      <input type="number" id="expected_return" name="expected_return" [(ngModel)]="enteredExpectedReturn"/>
+      </p>
+    </div>
+    <div>
+        <p>
+      <label for="duration">Duração</label>
+      <input type="number" id="duration" name="duration" [(ngModel)]="enteredDuration"/>
+      </p>
+    </div>
+  </div>
+  <button type="submit">Calcular</button>
+</form>
