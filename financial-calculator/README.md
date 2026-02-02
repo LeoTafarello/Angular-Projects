@@ -1,4 +1,4 @@
-# 📈 Investment Growth Simulator
+#  Investment Growth Simulator
 
 A professional-grade financial application built with **Angular** to simulate long-term wealth accumulation. This tool provides a detailed year-by-year breakdown of how initial capital and annual contributions grow over time through compound interest.
 
@@ -8,17 +8,17 @@ A professional-grade financial application built with **Angular** to simulate lo
 
 ---
 
-## 🎯 Project Overview
+##  Project Overview
 
 This calculator helps users visualize their financial future by calculating the power of compound interest. Unlike simple calculators, this project provides a full projection table, breaking down the growth into principal vs. interest.
 
-### 📥 User Inputs
+###  User Inputs
 *   **Initial Investment:** The starting amount (lump sum).
 *   **Annual Investment:** The amount contributed every year.
 *   **Expected Return:** The annual interest rate (%) expected.
 *   **Duration:** The total investment horizon in years.
 
-### 📊 Detailed Projection Table
+###  Detailed Projection Table
 The application generates a dynamic report with the following columns:
 1.  **Year:** The timeline of the investment.
 2.  **Investment Value:** The total balance at the end of that year.
@@ -28,7 +28,7 @@ The application generates a dynamic report with the following columns:
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 *   **Framework:** [Angular](https://angular.io/) (Latest version)
 *   **Language:** [TypeScript](https://www.typescriptlang.org/)
@@ -38,7 +38,7 @@ The application generates a dynamic report with the following columns:
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 *   [Node.js](https://nodejs.org/) (v18+)
@@ -71,7 +71,7 @@ The application generates a dynamic report with the following columns:
 
 ---
 
-## 📋 Projection Example
+##  Projection Example
 
 | Year | Investment Value | Interest (Year) | Total Interest | Invested Capital |
 |:---:|:---:|:---:|:---:|:---:|
@@ -80,4 +80,4 @@ The application generates a dynamic report with the following columns:
 | ... | ... | ... | ... | ... |
 
 ---
-Developed with ❤️ by Leonardo Tafarello (https://github.com/LeoTafarello)
+Developed by Leonardo Tafarello (https://github.com/LeoTafarello)
