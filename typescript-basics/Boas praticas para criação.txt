@@ -1,0 +1,18 @@
+ng new [NOME DO PROJETO] *sempre letras minúsculas e sem espaço, usar - ao invés do espaço
+
+TypeScript
+
+let nome: string; -> STRING
+
+let numero: number; -> NUMBER
+
+let isInstructor: boolean; -> BOOLEAN
+
+let times: string[]; -> ARRAY
+
+let person: {  -> OBJECT
+name: string;
+idade: numnber;
+};
+
+ng g c [nome da pasta]

@@ -1,0 +1,7 @@
+    <article>
+        <header>
+            <img [src]="image().src" [alt]="image().alt" />
+            <h2> {{title()}} </h2>
+        </header>
+        <ng-content/>  <!--  é feito para inserir o conteúdo filho aqui e o html nao se perder, ou seja, o que estiver entre as tags de abertura e fechamento do componente -->
+    </article>
