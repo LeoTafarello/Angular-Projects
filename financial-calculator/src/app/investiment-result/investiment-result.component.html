@@ -1,0 +1,28 @@
+@if (!results) {  <!-- Caso queira usar signal, ficaria -> !results() -->
+    <p class="center">Please enter some values and press "Calculate".</p>
+
+} @else {
+
+<table>
+    <thead>
+        <tr>
+            <th>Ano</th>
+            <th>Investimento no Ano</th>
+            <th>Juros (Ano)</th>
+            <th>Juros Total</th>
+            <th>Capital Investido</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (result of results;track result.year) {  <!-- Usando track para falar qual criterio iremos usar como unico, que seria o ano.   Caso queira usar signal, ficaria assim (result of results();track result.year) -->
+        <tr>
+            <td>{{ result.year}}</td>
+            <td>{{ result.valueEndOfYear | currency:'BRL':'symbol':'1.2-2'}}</td>
+            <td>{{ result.interest | currency:'BRL':'symbol':'1.2-2'}}</td>
+            <td>{{ result.totalInterest | currency:'BRL':'symbol':'1.2-2'}}</td>
+            <td>{{ result.totalAmountInvested | currency:'BRL':'symbol':'1.2-2'}}</td>     
+        </tr>    
+        }
+    </tbody>
+</table>
+}
