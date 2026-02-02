@@ -12,17 +12,17 @@ A financial calculator application built with Angular.
 #### Getting Started
 
 1. Navigate to the project directory:
-   \\\ash
+   \\\Bash
    cd financial-calculator
    \\\
 
 2. Install dependencies:
-   \\\ash
+   \\\Bash
    npm install
    \\\
 
 3. Start the development server:
-   \\\ash
+   \\\Bash
    ng serve
    \\\
 
