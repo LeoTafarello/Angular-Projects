@@ -26,7 +26,7 @@ A sleek and modern task management application built with **Angular**. This proj
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 Baseado na organização do diretório `src/app`:
 
