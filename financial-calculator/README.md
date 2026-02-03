@@ -56,6 +56,7 @@ src/app/
  ├── app.component.ts           # Main application shell
  └── app.component.html         # Main layout orchestrator
 ```
+---
 
 ### Installation
 
