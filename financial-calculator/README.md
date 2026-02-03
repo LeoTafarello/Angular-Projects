@@ -44,6 +44,19 @@ The application generates a dynamic report with the following columns:
 *   [Node.js](https://nodejs.org/) (v18+)
 *   [Angular CLI](https://angular.io/cli)
 
+### Project Structure
+
+```text
+src/app/
+ ├── header/                    # Dashboard header (logo and title)
+ ├── investiment-result/        # Table component to display calculation results
+ ├── user-input/                # Form component for user data entry
+ │    └── user-input.model.ts   # Interface for investment data types
+ ├── app-investiment.service.ts # Centralized logic for financial math
+ ├── app.component.ts           # Main application shell
+ └── app.component.html         # Main layout orchestrator
+```
+
 ### Installation
 
 1.  **Clone the repository:**
