@@ -17,13 +17,6 @@ A sleek and modern task management application built with **Angular**. This proj
 
 ---
 
-## Preview
-
-*(Add a screenshot of your app here)*
-> **Design Note:** The UI features a sidebar with user profiles and a main content area that dynamically updates based on the selected user.
-
----
-
 ## Technologies Used
 
 *   **Angular:** Core framework for the SPA (Single Page Application).
@@ -33,17 +26,24 @@ A sleek and modern task management application built with **Angular**. This proj
 
 ---
 
-## Project Structure
+## 📂 Project Structure
+
+Baseado na organização do diretório `src/app`:
 
 ```text
-src/
- └── app/
-     ├── components/
-     │   ├── user/           # User sidebar components
-     │   ├── tasks/          # Task list and task item components
-     │   └── header/         # Main dashboard header
-     ├── models/             # Task and User interfaces
-     └── services/           # Logic for managing task data and filtering
+src/app/
+ ├── header/            # Dashboard top header component
+ ├── shared/            # Shared resources
+ │    └── card/         # Reusable Card UI component
+ ├── tasks/             # Task-related features
+ │    ├── new-task/     # Form component to add tasks
+ │    ├── task/         # Individual task item component
+ │    ├── tasks.service.ts # Centralized logic for tasks
+ │    └── tasks.module.ts  # Feature module for tasks
+ ├── user/              # User selection/profile components
+ ├── app.component.ts   # Main logic for user selection
+ ├── app.module.ts      # Root module
+ └── dummy-users.ts     # Mock data for testing
 ```
 
 ### Installation
