@@ -1,47 +1,48 @@
-# Task Manager - Enterprise Edition
+## Server Management Dashboard
 
-A sleek and modern task management application built with **Angular**. This project focuses on a clean user experience, allowing users to manage tasks across different team members with a professional enterprise-level interface.
+A modern, high-performance monitoring dashboard built with **Angular**. This application provides real-time insights into server health, traffic analytics, and a comprehensive support ticket management system.
 
 ![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 
 ---
 
-## Features
+## Key Features
 
-*   **User-Centric Task Lists:** Switch between different users to see their specific task assignments.
-*   **Add New Tasks:** Dynamic form to add tasks to a specific user's dashboard.
-*   **Remove Tasks:** Easily delete completed or cancelled tasks.
-*   **Modern UI/UX:** Dark-themed interface with a purple professional palette, responsive sidebar, and clean typography.
-*   **State Management:** Reactive updates when tasks are added or removed.
+*   **Live Server Status:** Visual indicators showing system uptime and operational status.
+*   **Traffic Analytics:** Dynamic bar charts representing user activity and server requests over the last 7 days.
+*   **Support Ticket System:** A complete internal workflow to open new support requests and manage active tickets.
+*   **Shared Component Architecture:** Highly reusable UI elements like custom buttons and specialized input controls.
+*   **Responsive Design:** A sleek, dark-themed purple interface optimized for enterprise management.
 
 ---
 
 ## Technologies Used
 
-*   **Angular:** Core framework for the SPA (Single Page Application).
-*   **TypeScript:** For robust, type-safe code.
-*   **CSS3 / SCSS:** Custom styling for the enterprise-level look.
-*   **Angular Components & Services:** Organized architecture to handle data sharing between the user list and the task view.
+*   **Angular:** Framework utilizing a modular and component-driven architecture.
+*   **TypeScript:** Type-safe development for complex dashboard state management.
+*   **CSS3:** Advanced styling featuring custom gradients and professional UI layouts.
+*   **Component Composition:** Extensive use of "Dashboard Items" as wrappers for different monitoring modules.
 
 ---
 
 ## Project Structure
 
+Organizado de forma modular dentro de `src/app`:
+
 ```text
 src/app/
- ├── header/            # Dashboard top header component
- ├── shared/            # Shared resources
- │    └── card/         # Reusable Card UI component
- ├── tasks/             # Task-related features
- │    ├── new-task/     # Form component to add tasks
- │    ├── task/         # Individual task item component
- │    ├── tasks.service.ts # Centralized logic for tasks
- │    └── tasks.module.ts  # Feature module for tasks
- ├── user/              # User selection/profile components
- ├── app.component.ts   # Main logic for user selection
- ├── app.module.ts      # Root module
- └── dummy-users.ts     # Mock data for testing
+ ├── dashboard/                # Main dashboard container
+ │    ├── dashboard-item/      # Wrapper component for dashboard cards
+ │    ├── server-status/       # Server monitoring logic and UI
+ │    ├── support-tickets/     # Ticket management system (New & List)
+ │    └── traffic/             # Activity charts and analytics
+ ├── header/                   # Navigation and branding
+ ├── shared/                   # Global reusable components
+ │    ├── button/              # Custom styled buttons
+ │    └── control/             # Specialized input and form controls
+ ├── app.component.ts          # Root layout
+ └── app.model.ts              # Global data interfaces and types
 ```
 
 ### Installation
@@ -53,7 +54,7 @@ src/app/
 
 2.  **Navigate to the folder:**
     ```bash
-    cd Angular-Projects/task-site
+    cd Angular-Projects/server-site/Server-site
     ```
 
 3.  **Install dependencies:**
@@ -68,6 +69,19 @@ src/app/
 
 5.  **View in browser:**
     Navigate to `http://localhost:4200`
+
+---
+
+## Modules Overview
+
+*Server Status
+Monitors system availability using real-time signals to indicate whether services are operational or require attention.
+
+User Activity (Traffic)
+Visualizes server requests using a bar chart system, providing a 7-day snapshot of infrastructure load.
+
+* Support Tickets
+A fully functional module allowing administrators to manage user requests with structured inputs for titles and descriptions.
 
 ---
 
