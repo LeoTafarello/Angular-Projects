@@ -1,59 +1,40 @@
-# TypescriptBasics
+## TypeScript Fundamentals & Basics
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.0.
+This directory contains practical notes and code examples for mastering **TypeScript**. The primary focus is understanding strong typing, modern syntax features, and object-oriented programming principles that enhance JavaScript development.
 
-## Development server
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
-```
+## Purpose
+To document my TypeScript learning journey and serve as a quick-reference "cheat sheet" for essential concepts used in Angular projects and modern web development.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Key Concepts in `Basic.ts`
 
-## Code scaffolding
+The main file covers the following fundamental topics:
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### 1. Functions & Types
+*   Defining explicit types for parameters and return values.
+*   Understanding the use of the `any` type and its implications.
 
-```bash
-ng generate component component-name
-```
+### 2. Generics
+*   Using `<T>` to create reusable functions that work with multiple types while maintaining type safety.
+*   Practical example: The `insertAtBeginning` utility function for array manipulation.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### 3. Classes & Objects
+*   Class declaration and instantiation (`Student` class).
+*   **Shorthand Constructor:** Using access modifiers (`public`, `private`) directly within the constructor parameters to simplify attribute declaration and initialization.
+*   Method logic and data encapsulation.
 
-```bash
-ng generate --help
-```
+### 4. Interfaces
+*   Defining structural contracts with `interface` to ensure objects follow a specific shape (e.g., the `Human` interface).
 
-## Building
+---
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## How to View & Run
+Since this is a syntax study repository, you can:
+1. Read the documented code directly in [Basic.ts](./src/Basic.ts).
+2. If you have `ts-node` installed, you can execute the file via terminal:
+   ```bash
+   ts-node src/Basic.ts
+   ```
