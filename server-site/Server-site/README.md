@@ -1,27 +1,79 @@
-# CmpDeepDive
+# Task Manager - Enterprise Edition
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.0-next.2.
+A sleek and modern task management application built with **Angular**. This project focuses on a clean user experience, allowing users to manage tasks across different team members with a professional enterprise-level interface.
 
-## Development server
+![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+*   **User-Centric Task Lists:** Switch between different users to see their specific task assignments.
+*   **Add New Tasks:** Dynamic form to add tasks to a specific user's dashboard.
+*   **Remove Tasks:** Easily delete completed or cancelled tasks.
+*   **Modern UI/UX:** Dark-themed interface with a purple professional palette, responsive sidebar, and clean typography.
+*   **State Management:** Reactive updates when tasks are added or removed.
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Preview
 
-## Running unit tests
+*(Add a screenshot of your app here)*
+> **Design Note:** The UI features a sidebar with user profiles and a main content area that dynamically updates based on the selected user.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
+## Technologies Used
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+*   **Angular:** Core framework for the SPA (Single Page Application).
+*   **TypeScript:** For robust, type-safe code.
+*   **CSS3 / SCSS:** Custom styling for the enterprise-level look.
+*   **Angular Components & Services:** Organized architecture to handle data sharing between the user list and the task view.
 
-## Further help
+---
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Project Structure
+
+```text
+src/
+ └── app/
+     ├── components/
+     │   ├── user/           # User sidebar components
+     │   ├── tasks/          # Task list and task item components
+     │   └── header/         # Main dashboard header
+     ├── models/             # Task and User interfaces
+     └── services/           # Logic for managing task data and filtering
+```
+
+### Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/LeoTafarello/Angular-Projects.git
+    ```
+
+2.  **Navigate to the folder:**
+    ```bash
+    cd Angular-Projects/task-site
+    ```
+
+3.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+
+4.  **Run the development server:**
+    ```bash
+    ng serve
+    ```
+
+5.  **View in browser:**
+    Navigate to `http://localhost:4200`
+
+---
+
+### License
+Distributed under the MIT License.
+
+Developed by Leonardo Tafarello (https://github.com/LeoTafarello)
