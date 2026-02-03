@@ -74,18 +74,18 @@ src/app/
 
 ---
 
-## Modules Overview
+##  Modules Overview
 
-*Server Status
-Monitors system availability using real-time signals to indicate whether services are operational or require attention.
+*   **Server Status**  
+    Monitors system availability using real-time signals to indicate whether services are operational or require attention.
 
-User Activity (Traffic)
-Visualizes server requests using a bar chart system, providing a 7-day snapshot of infrastructure load.
+*   **User Activity (Traffic)**  
+    Visualizes server requests using a bar chart system, providing a 7-day snapshot of infrastructure load.
 
-* Support Tickets
-Divided into two main sub-modules:
-  .New Ticket: Handles the input and validation for opening new requests.
-  .Ticket Item: Manages the display and state of existing support entries.
+*   **Support Tickets**  
+    Divided into two main sub-modules:
+    *   **New Ticket**: Handles the input and validation for opening new requests.
+    *   **Ticket Item**: Manages the display and state of existing support entries.
 
 
 ---
