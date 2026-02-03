@@ -28,8 +28,6 @@ A sleek and modern task management application built with **Angular**. This proj
 
 ## Project Structure
 
-Baseado na organização do diretório `src/app`:
-
 ```text
 src/app/
  ├── header/            # Dashboard top header component
