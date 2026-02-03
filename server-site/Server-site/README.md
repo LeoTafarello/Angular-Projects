@@ -35,8 +35,10 @@ src/app/
  ├── dashboard/                # Main dashboard container
  │    ├── dashboard-item/      # Wrapper component for dashboard cards
  │    ├── server-status/       # Server monitoring logic and UI
- │    ├── support-tickets/     # Ticket management system (New & List)
- │    └── traffic/             # Activity charts and analytics
+ │    ├── traffic/             # Activity charts and analytics
+ │    └── support-tickets/     # Ticket management system
+ │         ├── new-ticket/     # Form component to open new requests
+ │         └── ticket/         # Component to display individual ticket data
  ├── header/                   # Navigation and branding
  ├── shared/                   # Global reusable components
  │    ├── button/              # Custom styled buttons
@@ -81,7 +83,10 @@ User Activity (Traffic)
 Visualizes server requests using a bar chart system, providing a 7-day snapshot of infrastructure load.
 
 * Support Tickets
-A fully functional module allowing administrators to manage user requests with structured inputs for titles and descriptions.
+Divided into two main sub-modules:
+  .New Ticket: Handles the input and validation for opening new requests.
+  .Ticket Item: Manages the display and state of existing support entries.
+
 
 ---
 
