@@ -1,4 +1,4 @@
-import { Component, HostBinding, input, ViewEncapsulation,HostListener, inject,ElementRef } from '@angular/core';
+import { Component, input, ViewEncapsulation,inject,ElementRef,ContentChild,afterRender } from '@angular/core';
 
 @Component({
   selector: 'app-control',
@@ -21,12 +21,21 @@ export class ControlComponent {
     //  }
 
   label = input.required<string>();
-
   private el = inject(ElementRef);
+  @ContentChild('input') private control?: ElementRef<HTMLInputElement | HTMLTextAreaElement>;  //quando vc tem um content usando ng = 'ng-content'. Voce devera usar o ContentChild pois nao conseguimos acessar o ng. Assim criei o 'input' no new-ticket que seria onde o ng esta puxando.
+  //private control = contentChild<ElementRef<HTMLInputElement | HTMLTextAreaElement>>('input');
+
+  constructor(){
+    afterRender(() => {   //vai executar depois de qualquer mudança em qualquer lugar.....caso usasse afterNextRender, so executa depois da proxima mudança
+      console.log(afterRender);
+    });
+  }
 
   onClick(){
     console.log('Clicked');
     console.log(this.el);
+    console.log(this.control);
+    //console.log(this.control());
   }
   
 }

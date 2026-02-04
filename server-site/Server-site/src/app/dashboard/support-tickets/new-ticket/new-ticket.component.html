@@ -1,9 +1,9 @@
-<form (ngSubmit)="OnSubmit(titleInput.value, textInput.value)">  <!-- ngSubmit no form para pegar os dados e passando o value do tittleInput como 1 valor e do textInput como 2 valor para a função OnSubmit -->
+<form (ngSubmit)="OnSubmit(titleInput.value, textInput.value)" #form>  <!-- ngSubmit no form para pegar os dados e passando o value do tittleInput como 1 valor e do textInput como 2 valor para a função OnSubmit -->
     <app-control label="Title">
-        <input name="title" id="title" #titleInput />  <!-- #titleInput e uma variavel que guarda os dados do input. Lembrando que sempre precisa do # e também so pe usado pelo Angular -->
+        <input name="title" id="title" #titleInput #input />  <!-- #titleInput e uma variavel que guarda os dados do input. Lembrando que sempre precisa do # e também so pe usado pelo Angular -->
     </app-control>
     <app-control label="Request">
-        <textarea name="request" id="request" rows="3" #textInput></textarea>
+        <textarea name="request" id="request" rows="3" #textInput #input ></textarea>
     </app-control>
     <p>
         <button appButton>

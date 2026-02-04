@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit,inject,DestroyRef } from '@angular/core';
+import { Component, OnInit,inject,DestroyRef,signal,effect } from '@angular/core';
 
 @Component({
   selector: 'app-server-status',
@@ -12,18 +12,24 @@ export class ServerStatusComponent implements OnInit {  //usando o implements fa
   //private interval?: NodeJS.Timeout; //interval vai receber o valor do setInterval para ser usado no ngOnDestroy, caso nao seja mais utilizado.
   //private interval?: ReturnType<typeof setInterval>; //mudando para este modo pois se tiver esse erro -> Cannot find namespace 'NodeJS'.
   private destroyRef = inject(DestroyRef); //usando DestroyRef que é uma classe do Angular e faz a mesma coisa dos de cima, so que mais "atualizado" e so funciona no Angular v16 pra cima
-  currentStatus: 'online' | 'offline' | 'unknown' = 'online';  //estou falando que a variavel so pode receber o status online,offline ou uknown, e no caso agora seria online. Caso use pra frente e nao for igual, dara erro
+  currentStatus = signal<'online' | 'offline' | 'unknown'>('online');  //estou falando que a variavel so pode receber o status online,offline ou uknown, e no caso agora seria online. Caso use pra frente e nao for igual, dara erro
+
+  constructor(){
+    effect(()=> {  //effect faz com que você possa ver logs com signal, caso nao apenas consiguiria ver a 1x que ele ussase. agora ira mostrar as vezes que ele muda para offline,online ou unknow
+          console.log(this.currentStatus());
+    });
+  }
 
   ngOnInit(){  //Usamos o ngOnInit para rodar depois de receber o input. Lembrando que para HTTP, devemos usar sempre o ngOnInit
     // this.interval = setInterval(() => {   //pode usar para o metodo antigo que seria o ngOnDestroy
     const interval = setInterval(() => {
       const rnd = Math.random();
       if (rnd < 0.5){
-        this.currentStatus = 'online';
+        this.currentStatus.set('online');
       } else if (rnd <0.9){
-        this.currentStatus = 'offline';
+        this.currentStatus.set('offline');
       } else {
-        this.currentStatus = 'unknown'
+        this.currentStatus.set('unknown')
       }
     }, 5000);
 
