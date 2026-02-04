@@ -1,27 +1,96 @@
-# CmpDeepDive
+## Server Management Dashboard
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.0-next.2.
+A modern, high-performance monitoring dashboard built with **Angular**. This application provides real-time insights into server health, traffic analytics, and a comprehensive support ticket management system.
 
-## Development server
+![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## Key Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+*   **Live Server Status:** Visual indicators showing system uptime and operational status.
+*   **Traffic Analytics:** Dynamic bar charts representing user activity and server requests over the last 7 days.
+*   **Support Ticket System:** A complete internal workflow to open new support requests and manage active tickets.
+*   **Shared Component Architecture:** Highly reusable UI elements like custom buttons and specialized input controls.
+*   **Responsive Design:** A sleek, dark-themed purple interface optimized for enterprise management.
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Technologies Used
 
-## Running unit tests
+*   **Angular:** Framework utilizing a modular and component-driven architecture.
+*   **TypeScript:** Type-safe development for complex dashboard state management.
+*   **CSS3:** Advanced styling featuring custom gradients and professional UI layouts.
+*   **Component Composition:** Extensive use of "Dashboard Items" as wrappers for different monitoring modules.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
+## Project Structure
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Organizado de forma modular dentro de `src/app`:
 
-## Further help
+```text
+src/app/
+ ├── dashboard/                # Main dashboard container
+ │    ├── dashboard-item/      # Wrapper component for dashboard cards
+ │    ├── server-status/       # Server monitoring logic and UI
+ │    ├── traffic/             # Activity charts and analytics
+ │    └── support-tickets/     # Ticket management system
+ │         ├── new-ticket/     # Form component to open new requests
+ │         └── ticket/         # Component to display individual ticket data
+ ├── header/                   # Navigation and branding
+ ├── shared/                   # Global reusable components
+ │    ├── button/              # Custom styled buttons
+ │    └── control/             # Specialized input and form controls
+ ├── app.component.ts          # Root layout
+ └── app.model.ts              # Global data interfaces and types
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/LeoTafarello/Angular-Projects.git
+    ```
+
+2.  **Navigate to the folder:**
+    ```bash
+    cd Angular-Projects/server-site/Server-site
+    ```
+
+3.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+
+4.  **Run the development server:**
+    ```bash
+    ng serve
+    ```
+
+5.  **View in browser:**
+    Navigate to `http://localhost:4200`
+
+---
+
+##  Modules Overview
+
+*   **Server Status**  
+    Monitors system availability using real-time signals to indicate whether services are operational or require attention.
+
+*   **User Activity (Traffic)**  
+    Visualizes server requests using a bar chart system, providing a 7-day snapshot of infrastructure load.
+
+*   **Support Tickets**  
+    Divided into two main sub-modules:
+    *   **New Ticket**: Handles the input and validation for opening new requests.
+    *   **Ticket Item**: Manages the display and state of existing support entries.
+
+
+---
+
+### License
+Distributed under the MIT License.
+
+Developed by Leonardo Tafarello (https://github.com/LeoTafarello)
