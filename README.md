@@ -10,7 +10,7 @@ Hey there! I'm **Leonardo Godoi Tafarello** and this is where the magic happens.
 
 ##  What's cooking in this Lab?
 
-Each folder here is a different adventure. Take a look at what I've been building:
+Each folder here is a different adventure. Take a look at what I've been building to learn or to have fun:
 
 ---
 
