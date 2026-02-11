@@ -1,27 +1,82 @@
-# Http
+# PlacePicker - Personal Travel Collection
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.0.
+A Full-Stack application built with **Angular** and **Node.js** that allows users to explore a gallery of breathtaking locations and curate their own personal list of "Favorite Places." 
 
-## Development server
+![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white)
+![Node.js](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![RxJS](https://img.shields.io/badge/rxjs-%23B7178C.svg?style=for-the-badge&logo=rxjs&logoColor=white)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+*   **Explore Destinations:** Browse a list of available places fetched from a backend API.
+*   **One-Click Selection:** Easily add any place to your "Favorite Places" list with a single click.
+*   **Dynamic Removal:** Remove a location from your favorites by clicking on it in the personal collection area.
+*   **Real-time Synchronization:** The app communicates with a Node.js backend to persist your choices.
+*   **Error Handling:** Robust error management using custom Modals to notify the user if API requests fail.
+*   **Modern State Management:** Powered by **Angular Signals** for reactive and efficient UI updates.
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Tech Stack & Concepts
 
-## Running unit tests
+*   **Frontend:** Angular (Standalone Components, Signals, HttpClient).
+*   **Backend:** Node.js with Express (Serving static images and RESTful API).
+*   **API Communication:** Use of `GET`, `PUT`, and `DELETE` requests to manage the data.
+*   **RxJS:** Implementation of operators like `map`, `tap`, and `catchError` for stream handling.
+*   **Clean Architecture:** Separation of concerns between Services, Models, and Components.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
+## Project Structure
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+  Organized into Frontend (Angular) and Backend (Node.js) layers:
+  
+```text
+placepikcer/
+ ├── backend/                 # Node.js + Express Server
+ │    ├── data/               # JSON files (places.json, user-places.json)
+ │    └── app.js              # API routes and logic
+ ├── src/app/
+ │    ├── places/             # Place-related components
+ │    │    ├── available-places/ # Lists all places from API
+ │    │    ├── user-places/      # Displays user's favorites
+ │    │    └── places.service.ts # Centralized API & Signals logic
+ │    ├── shared/             # Shared UI (Modals, Error handling)
+ │    ├── place.model.ts      # TypeScript Interface for Place objects
+ │    └── app.component.ts    # Main layout
 
-## Further help
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Installation & Setup
+
+To run this project locally, you must start both the Backend API and the Frontend Application:
+1. Start the Backend Server
+   
+ ```bash
+cd Angular-Projects/placepikcer/backend
+npm install
+node app.js
+ ```
+
+The server will run on http://localhost:3000
+
+2. Start the Frontend (Angular)
+Open a new terminal and run:
+
+ ```bash
+cd Angular-Projects/placepikcer
+npm install
+ng serve
+ ```
+Access the application at http://localhost:4200/
+
+## Performance Highlight: Signals & API
+This project leverages Angular Signals to track the state of user-selected places. This modern approach replaces traditional change detection for these specific updates, providing a significant performance boost and making the UI instantly responsive to API changes.
+
+## License
+Distributed under the MIT License.
+
+Developed by Leonardo Tafarello (https://github.com/LeoTafarello)
