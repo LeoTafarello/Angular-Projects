@@ -1,0 +1,17 @@
+<app-places-container title="Your Favorite Places">
+  @if (isFetching() && !isError()) {
+    <div class = "fallback-text">
+      <img src="loading.gif" alt="Loading...">
+      <p>Loading your favorites places....please wait</p>
+    </div>
+  }
+  @if (isError()) {
+    <p class = "fallback-text"> {{isError()}}</p>
+  }
+
+  @if (places()) {
+  <app-places [places]="places()!" (selectPlace)="onRemovePlace($event)" /> 
+  } @else if (places().length === 0) {
+  <p class="fallback-text">Unfortunately, no places could be found.</p>
+  }
+</app-places-container>
