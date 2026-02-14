@@ -1,29 +1,86 @@
-Dummy data for Pipes
+## Temperature Weather Dashboard
 
-# PipesDeepDive
+A specialized Angular application focused on **Data Transformation** through the power of **Pipes**. This project displays current and historical weather data, utilizing both built-in and custom-built pipes to handle date formatting, unit conversion, and dynamic sorting.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.0.
+![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🚀 Key Features
 
-## Code scaffolding
+*   **Real-time Date Formatting:** Uses Angular's built-in `date` pipe to display timestamps in a readable format.
+*   **Unit Conversion (Celsius/Fahrenheit):** A custom pipe that converts temperature values on the fly and appends the correct symbol (°C/°F).
+*   **Dynamic List Sorting:** An impure pipe that sorts historical data in ascending or descending order, updating automatically when the data changes.
+*   **Localized View:** Displays weather data for multiple global cities (New York, Berlin, Paris, Chicago).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## Technical Stack & Concepts
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+*   **Angular:** Framework utilizing Standalone components and custom Pipes.
+*   **Custom Pipes (`PipeTransform`):** 
+    *   **TemperaturePipe:** Handles mathematical conversion logic and string formatting.
+    *   **SortPipe:** An **Impure Pipe** (`pure: false`) designed to track changes inside arrays for real-time sorting.
+*   **Control Flow:** Implementation of `@for` loops to render lists of historical temperatures.
 
-## Running unit tests
+---
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Project Structure
 
-## Running end-to-end tests
+The project is organized to highlight the logic behind data transformation:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```text
+src/app/
+ ├── sort.pipe.ts          # Impure pipe for sorting arrays (asc/desc)
+ ├── temperature.pipe.ts   # Custom pipe for °C to °F conversion
+ ├── app.component.ts      # Main logic and temperature data sets
+ ├── app.component.html    # Template applying pipes to raw data
+ └── app.component.css     # Themed styling for temperature cards
+```
+---
+## Pipes Deep Dive
+1. Temperature Pipe
+This pipe takes a raw number and transforms it based on parameters.
 
-## Further help
+Logic: Uses formula (val * 9/5) + 32 for Celsius to Fahrenheit.
+Usage: {{ value | temperature:'cel':'fah' }}
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+2. Sort Pipe (Impure)
+Unlike standard pipes, this pipe is marked as pure: false.
+
+Why? This allows the pipe to re-run whenever the array content changes (e.g., when a value is reset), ensuring the list remains sorted without manual triggers.
+Usage: @for (temp of data | sort:'desc')
+
+---
+
+## Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/LeoTafarello/Angular-Projects.git
+    ```
+
+2.  **Navigate to the folder:**
+    ```bash
+    cd Angular-Projects/weather-site
+    ```
+
+3.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+
+4.  **Run the development server:**
+    ```bash
+    ng serve
+    ```
+
+5.  **View in browser:**
+    Navigate to `http://localhost:4200`
+    
+### License
+Distributed under the MIT License.
+
+Developed by Leonardo Tafarello (https://github.com/LeoTafarello)
+ 
