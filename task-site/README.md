@@ -49,17 +49,27 @@ src/app/
  ```
 
 ## Routing Logic
-The application follows a structured URL hierarchy:
-Path	Component	Description
-/	NoTaskComponent	Default home view.
-/users/:uid	UserTasksComponent	Dashboard for a specific user.
-/users/:uid/tasks	TasksComponent	View all tasks for the selected user (uses Resolvers).
-/users/:uid/tasks/new	NewTaskComponent	Form to add a task (protected by Guards).
-/**	NotFoundComponent	404 Catch-all route.
-Advanced Routing Concepts Applied:
-Resolvers (resolve): Used to fetch userName and userTasks before the navigation completes, preventing "empty" states during loading.
-Guards (canDeactivate): The canLeaveEditPage function checks if the user has unsaved data before allowing them to navigate away from the task creation form.
-Redirects: Automatic redirection from empty child paths to the main tasks list for better UX.
+
+The application follows a structured URL hierarchy for a seamless navigation experience:
+
+| Path | Component | Description |
+|:--- |:--- |:--- |
+| `/` | `NoTaskComponent` | Default home view when no user is selected. |
+| `/users/:uid` | `UserTasksComponent` | Main dashboard for a specific user. |
+| `/users/:uid/tasks` | `TasksComponent` | List of all tasks (pre-loaded via Resolvers). |
+| `/users/:uid/tasks/new` | `NewTaskComponent` | Form to create tasks (protected by Guards). |
+| `/**` | `NotFoundComponent` | 404 Catch-all route for invalid URLs. |
+
+### Advanced Routing Concepts Applied:
+
+*   **Resolvers (`resolve`):**  
+    Used to fetch `userName` and `userTasks` before the component even starts to load. This ensures the UI never shows "empty" or "undefined" states while waiting for data.
+    
+*   **Guards (`canDeactivate`):**  
+    The `canLeaveEditPage` guard is implemented on the task creation form. It detects if the user has unsaved data and triggers a confirmation prompt before allowing them to navigate away.
+    
+*   **Redirects:**  
+    Automatic redirection from empty child paths (`/users/:uid`) directly to the tasks list to ensure the user always lands on a functional page.
 
 ## Installation & Setup
 1. **Clone the repository:**
