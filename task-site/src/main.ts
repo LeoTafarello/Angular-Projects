@@ -1,12 +1,18 @@
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { AppModule } from './app/app.module';
+import { bootstrapApplication } from '@angular/platform-browser';
+import { provideRouter, withComponentInputBinding, withRouterConfig } from '@angular/router';
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+import { AppComponent } from './app/app.component';
+import { routes } from './app/app.routes';
 
-// import { bootstrapApplication } from '@angular/platform-browser';
 
-// import { AppComponent } from './app/app.component';
-// import { HeaderComponent } from './app//header/header.component';
-
-// bootstrapApplication(AppComponent).catch((err) => console.error(err));
+bootstrapApplication(AppComponent,{
+    providers: [
+        provideRouter(
+            routes, 
+            withComponentInputBinding(), 
+            withRouterConfig({
+                paramsInheritanceStrategy: 'always',
+            })
+        ),
+    ],
+}).catch((err) => console.error(err));

@@ -1,35 +1,45 @@
-import { Component, Output, EventEmitter, Input } from '@angular/core';
+import {
+  Component,
+  inject,
+  input,
+} from '@angular/core';
+import { ResolveFn, RouterLink } from '@angular/router';
+
 import { TaskComponent } from './task/task.component';
-import { NewTaskComponent } from './new-task/new-task.component';
-import { type NewTaskData } from './new-task/new-task.model';
 import { TasksService } from './tasks.service';
+import { Task } from './task/task.model';
 
 @Component({
   selector: 'app-tasks',
-  standalone: false,
+  standalone: true,
   templateUrl: './tasks.component.html',
   styleUrl: './tasks.component.css',
-  //imports: [TaskComponent, NewTaskComponent]
+  imports: [TaskComponent, RouterLink],
 })
+
 export class TasksComponent {
+  userTasks = input.required<Task[]>();
+  userId = input.required<string>();
+  order = input<'asc' | 'desc' | undefined>();
+}
 
-  //@Input() name?: string; // recebe o nome do user selecionado, ? demostra que pode ser que nao tenha dados na variavel, caso usasse ! você diz que sempre vai ter o dado, pode ser usado desse jeito tmb "name: string | undefined;"
-  @Input({required: true}) name!: string; // recebe o nome do user selecionado
-  @Input({required: true}) userId!: string; // recebe o id do user selecionado
-  isAddingTask = false; // controla a exibição do formulário de nova tarefa
+export const resolveUserTasks: ResolveFn<Task[]> = (
+  activatedRouteSnapshot,
+  routerState
+) => {
+  const order = activatedRouteSnapshot.queryParams['order'];
+  const tasksService = inject(TasksService);
+  const tasks = tasksService
+    .allTasks()
+    .filter(
+      (task) => task.userId === activatedRouteSnapshot.paramMap.get('userId')
+    );
 
-  constructor (private tasksService: TasksService) {} //usa o constructor para injetar o serviço de tarefas
-
-  get selectUserTasks() {
-    return this.tasksService.getUserTasks(this.userId);
+  if (order && order === 'asc') {
+    tasks.sort((a, b) => (a.id > b.id ? 1 : -1));
+  } else {
+    tasks.sort((a, b) => (a.id > b.id ? -1 : 1));
   }
 
-  onStartAddTask(){
-    this.isAddingTask = true;
-  }
-
-   onCloseAddTask(){
-    // lógica para cancelar a tarefa, se necessário
-    this.isAddingTask = false;
-    }
-  }
+  return tasks.length ? tasks : [];
+};

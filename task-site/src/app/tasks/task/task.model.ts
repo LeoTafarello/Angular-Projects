@@ -1,7 +1,13 @@
-export interface Task{   // exporta a interface Task para ser usada em outros arquivos, pois se tiver algo de task tem que estar na pasta task
+export interface Task {
   id: string;
   userId: string;
-  title:  string;
+  title: string;
   summary: string;
   dueDate: string;
+}
+
+export interface NewTaskData {
+  title: string;
+  summary: string;
+  date: string;
 }

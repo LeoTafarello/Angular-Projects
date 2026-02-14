@@ -1,32 +1,9 @@
-<!-- <header>
-  <img src="assets/angular-logo.png" alt="The Angular logo: The letter 'A'" />
-  <h1>Let's get started!</h1>
-  <p>Time to learn all about Angular!</p>
-</header>
- -->
-
- <!-- <app-user [id]="users[4].id "
-                      [avatar]="users[4].avatar"
-                      [name]=" users[4].name"
-                      (select)="onSelectUser($event)" /> -->
-
-<app-header/>
+<app-header />
 
 <main>
-    <ul id="users">
-        @for (user of users; track user.id){ <!--com o track by user.id ele so atualiza o que mudou, nao todo o componente, por usar o user.id cada user vai ter um ID unico e isso ajuda a ajustar caso a lista de usuarios seja alterada-->
-            <li>
-                <app-user [user]="user" 
-                          [selected]="user.id === selectedUserId"       
-                          (select)="onSelectUser($event)" />                    <!-- na linha de cima verifica se o user.id é igual ao selectedUserId, se for passa TRUE para o selected, se nao FALSE-->    
-            </li>
-        }
-    </ul>
+  <app-users />
 
-    @if(selectedUser){   <!--se tiver um user selecionado, mostra o componente task-->
-        <app-tasks [userId]="selectedUser.id" [name]="selectedUser.name"/> <!--passa o nome do user selecionado para o componente task.  ? = caso tenha dado passe o NAME, caso nao defina como Undefined.-->
-    } @else {
-        <p id ="fallback"> Select a user to see their Tasks!</p>
-    } 
-
+  <div>
+    <router-outlet/>
+  </div>
 </main>
